@@ -89,7 +89,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        return response()->json($product);
     }
 
     /**
@@ -101,7 +102,21 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //  return $request;
+         $id = $request->id;
+         $name = $request->name;
+         $description = $request->description;
+         $price = $request->price;
+
+         $product = Product::findOrFail($id);
+         $product->name = $name;
+         $product->description = $description;
+         $product->price = $price;
+         $product->update();
+         return response()->json([
+            'isError' => false,
+            'isSuccess' => "Product update Successful",
+        ]);
     }
 
     /**

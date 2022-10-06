@@ -52,7 +52,7 @@
         <!-- Footer -->
         <div class="legal">
             <div class="copyright">
-                &copy; 2022 <a href="javascript:void(0);">OrginFood</a>.
+                &copy; 2022 <a href="javascript:void(0);">Laravel and Vue Task</a>.
             </div>
             <div class="version">
                 <b>Version: </b> 0.0.1

@@ -88,7 +88,7 @@ import axios from 'axios';
 
         methods: {
             addProduct(){
-                axios.post('product-store',{
+                axios.post('api/product-store',{
                     params:{
                         data:this.products,
                     }

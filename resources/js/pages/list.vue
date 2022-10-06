@@ -22,7 +22,9 @@
                     <td>{{ item.description }}</td>
                     <td>{{ item.price }}</td>
                     <td>
-                        <a v-on:click="deleteProduct(item.id)">Delete</a>
+                        <router-link :to="{name: 'edit', params: { id: item.id }}" class="btn btn-primary">Edit</router-link>|
+                        <a class="btn btn-danger" v-on:click="deleteProduct(item.id)">Delete</a>
+
                     </td>
                 </tr>
             </tbody>
@@ -47,7 +49,7 @@
 
         methods: {
             getData(){
-        axios.get('product-list',{
+        axios.get('api/product-list',{
         })
         .then((response)=>{
             this.products = response.data;
@@ -58,7 +60,7 @@
      },
 
      deleteProduct(id){
-            axios.post('delete-product',{
+            axios.post('api/delete-product',{
                 params:{
                     id: id,
                 }

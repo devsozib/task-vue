@@ -21,6 +21,4 @@ use App\Http\Controllers\ProductController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('product-list',[ProductController::class,'index']);
-Route::post('product-store',[ProductController::class,'store']);
-Route::post('delete-product',[ProductController::class,'destroy']);
+
